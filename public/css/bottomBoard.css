@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* BOTTOMBOARD */
+#bottomBoard{
+    width: 100%; 
+    height: 300px;
+    background-color: rgb(24, 28, 30);
+}

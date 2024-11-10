@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.title{
+    background: linear-gradient(120deg, rgb(229, 158, 255), rgb(0, 153, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 40px;
+    /*ANADIR FONT*/
+}
+.text{
+    color: rgba(255, 255, 255, 0.800);
+    font-size: 21px;
+    text-align: center;
+    /*ANADIR FONT*/
+}
+.button{
+    width: 200px;
+    height: auto;
+    color: rgb(2, 77, 151);
+    background-color: white;
+    border: 2px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    padding: 13px;
+    font-size: 18px;
+    text-align: center;
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+.button:hover{
+    width: 230px;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+.link{
+   color: rgba(153, 195, 255);
+   text-decoration: none;
+   /*AÑADIR FONT*/
+}
+.link:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

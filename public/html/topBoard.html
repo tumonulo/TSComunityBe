@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/topBoard.css">
+</head>
+<body>
+    <div id="topBoard">
+        <input type="button" value="T S  C O M U N I T Y  B R A W L" id="topBoardTsComunityBrawlButton" onclick="sendMessage('topBoardTsComunityBrawlOnclick')">
+        <div id="topBoardButtons">
+            <input type="button" value="Inicio" class="topBoardButtonsButton" onclick="sendMessage('topBoardInicioOnclick')">
+            <input type="button" value="Discord" class="topBoardButtonsButton" onclick="sendMessage('topBoardDiscordOnclick')">
+            <input type="button" value="Clubes" class="topBoardButtonsButton" onclick="sendMessage('topBoardClubesOnclick')">
+            <input type="button" value="Equipo Competitivo" class="topBoardButtonsButton" onclick="sendMessage('topBoardEquipoCompetitivoOnclick')">
+            <input type="button" value="Valoraciones" class="topBoardButtonsButton" onclick="sendMessage('topBoardValoracionesOnclick')">
+            <input type="button" value="Redes Sociales" class="topBoardButtonsButton" onclick="sendMessage('topBoardRedesSocialesOnclick')"">
+            <input type="button" value="Soporte" class="topBoardButtonsButton" onclick="sendMessage('topBoardSoporteOnclick')">
+            <input type="button" value="Sobre Nosotros" class="topBoardButtonsButton" onclick="sendMessage('topBoardSobreNosotrosOnclick')">
+        </div>
+    </div>
+</body>
+<script>
+    function sendMessage(action) {
+        window.parent.postMessage(action, window.location.origin);
+    }
+</script>
+</html>
