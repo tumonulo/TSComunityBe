@@ -3,6 +3,8 @@ const app = express();
 require("dotenv").config();
 const PORT = process.env.PORT ?? 3000;
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
     res.sendFile(process.cwd() + "/public/html/index.html")
 })
@@ -12,7 +14,7 @@ app.get("/Clubes", (req, res) => {
 })
 
 app.get("/Postulaciones", (req, res) => {
-    res.sendFile(process.cwd() + "/public/html/application.html")
+    res.sendFile(process.cwd() + "/public/html/applications.html")
 })
 
 app.listen(PORT, () => {
