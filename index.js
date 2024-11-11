@@ -31,6 +31,10 @@ app.get("/Postulaciones", (req, res) => {
     res.sendFile(process.cwd() + "/public/html/applications.html")
 })
 
+app.use((req, res) => {
+  res.status(404).sendFile(process.cwd() + "/public/html/404.html")
+})
+
 app.listen(PORT, () => {
     require("./ready");
     
@@ -39,7 +43,6 @@ app.listen(PORT, () => {
         ╔═══════════════════════════════════╗
         ║          SERVER RUNNING           ║
         ╚═══════════════════════════════════╝
-        Puerto:          ${PORT}
         Localhost:       http://localhost:${PORT}
         Time To Connect: ${timeToConnect} ms `);
     })
