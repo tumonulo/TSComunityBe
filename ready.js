@@ -4,6 +4,7 @@ const process = require("node:process");
 const client = new Client({ intents: [Object.keys(GatewayIntentBits)], partials: [Object.keys(Partials), Partials.Channel], allowedMentions: { parse: ["users"]}});
 require("dotenv").config();
 const TOKENDISCORDBOT = process.env.TOKENDISCORDBOT;
+const TOKENMONGODB = process.env.TOKENMONGODB
 const startTime = Date.now();
 
 (async () => {
@@ -19,7 +20,7 @@ const startTime = Date.now();
       `);
   });
 
-  await mongoose.connect(config.mondodb).then(async () => {
+  await mongoose.connect(TOKENMONGODB).then(async () => {
     const mongooseStats = await mongoose.connection.db.stats();
     const timeToConnect = Date.now() - startTime;
     console.log(`
