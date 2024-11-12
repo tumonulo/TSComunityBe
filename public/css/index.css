@@ -1,4 +1,4 @@
-@keyframes middleBoardInicioOverlayAnimation{
+@keyframes mainInicioOverlayAnimation{
     0% {
         font-size: 25px;
         text-shadow: 0 0 4px rgb(255, 255, 88);
@@ -12,7 +12,7 @@
         text-shadow: 0 0 4px rgb(255, 255, 88);
     }
 }
-#middleBoardInicioOverlay{
+#mainInicioOverlay{
     position: absolute;
     z-index: 0;
     top: 250px;
@@ -27,27 +27,27 @@
     justify-content: center;
     font-size: 25px;
     user-select: none;
-    animation-name: middleBoardInicioOverlayAnimation;
-    animation: middleBoardInicioOverlayAnimation 1s ease-out infinite;
+    animation-name: mainInicioOverlayAnimation;
+    animation: mainInicioOverlayAnimation 1s ease-out infinite;
 }
-#middleBoardInicioOverlay:hover{
+#mainInicioOverlay:hover{
     color: rgb(255, 255, 106);
     cursor: pointer;
 }
-#topBoard{
+#header{
     z-index: 10;
 }
 
 
-/* MIDDLEBOARD */
-#middleBoard{
+/* MAIN */
+#main{
     width: 100%;
     height: auto;
 }
 
 
-/*MIDDLEBOARDINICIO*/
-#middleBoardInicio{
+/*mainINICIO*/
+#mainInicio{
     width: 100%;
     height: 647px;
     background: linear-gradient(rgb(24, 28, 30), rgb(62, 65, 69));
@@ -56,7 +56,7 @@
     align-items: center;
     justify-content: center;
 }
-#middleBoardInicio-0{
+#mainInicio-0{
     width: auto;
     height: 350px;
     margin-right: 140px;
@@ -64,27 +64,27 @@
     flex-direction: column;
     justify-content: space-between;
 }
-#middleBoardInicio-0\.0{
+#mainInicio-0\.0{
     width: auto;
     height: auto;
     color: white;
     margin-top: 95px;
     font-size: 50px;
 }
-#middleBoardInicio-0\.1{
+#mainInicio-0\.1{
     width: auto;
     height: auto;
     color: white;
     font-size: 21px;
 }
-#middleBoardInicio-0\.2{
+#mainInicio-0\.2{
     width: auto;
     height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-#middleBoardInicio-0\.2-button-0{
+#mainInicio-0\.2-button-0{
     width: 200px;
     height: auto;
     color: white;
@@ -100,14 +100,14 @@
     transition-property: all;
     transition-duration: 0.3s;
 }
-#middleBoardInicio-0\.2-button-0:hover{
+#mainInicio-0\.2-button-0:hover{
     color: rgb(35, 40, 43);
     background-color: white;
     cursor: pointer;
     transition-property: all;
     transition-duration: 0.3s;
 }
-#middleBoardInicio-0\.2-button-1{
+#mainInicio-0\.2-button-1{
     width: 200px;
     height: auto;
     color: white;
@@ -121,14 +121,14 @@
     transition-property: all;
     transition-duration: 0.3s;
 }
-#middleBoardInicio-0\.2-button-1:hover{
+#mainInicio-0\.2-button-1:hover{
     color: rgb(2, 77, 151);
     background-color: white;
     cursor: pointer;
     transition-property: all;
     transition-duration: 0.3s;
 }
-#middleBoardInicio-1{
+#mainInicio-1{
     width: 350px;
     height: auto;
     margin-top: 65px;
@@ -136,8 +136,8 @@
 }
 
 
-/*MIDDLEBOARDDISCORD*/
-#middleBoardDiscord{
+/*mainDISCORD*/
+#mainDiscord{
     width: 100%;
     height: auto;
     background: rgb(62, 65, 69);
@@ -146,7 +146,7 @@
     align-items: center;
     justify-content: space-between;
 }
-#middleBoardDiscord-0{
+#mainDiscord-0{
     width: 650px;
     height: 300px; 
     margin-top: 70px;
@@ -156,7 +156,7 @@
     align-items: center;
     justify-content: space-between;
 }
-#middleBoardDiscord-1{
+#mainDiscord-1{
     width: 1000px;
     height: 270px;
     display: flex;
@@ -166,7 +166,7 @@
     align-items: center;
     justify-content: space-between;
 }
-.middleBoardDiscord-1-mainContainer{
+.mainDiscord-1-mainContainer{
     width: 180px;
     height: 170px;
     display: flex;
@@ -174,12 +174,12 @@
     align-items: center;
     justify-content: space-between;
 }
-.middleBoardDiscord-1-separatingLine{
+.mainDiscord-1-separatingLine{
     width: 2px;
     height: 150px;
     background: linear-gradient(20deg, rgb(229, 158, 255), rgb(0, 153, 255));
 }
-#middleBoardDiscord-2{
+#mainDiscord-2{
     width: 450px;
     height: 250px;
     display: flex;
@@ -191,8 +191,8 @@
 }
 
 
-/*MIDDLEBOARDCLUBES*/
-#middleBoardClubes{
+/*mainCLUBES*/
+#mainClubes{
     width: 100%;
     height: auto;
     background-color: rgb(67, 75, 81);
@@ -201,7 +201,7 @@
     align-items: center;
     justify-content: space-between;
 }
-#middleBoardClubes-0{
+#mainClubes-0{
     width: 650px;
     height: 300px; 
     margin-top: 140px;
@@ -211,13 +211,13 @@
     align-items: center;
     justify-content: space-between;
 }
- #middleBoardClubes-0\.0{
+ #mainClubes-0\.0{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
  }
- #middleBoardClubes-1{
+ #mainClubes-1{
     width: 650px;
     height: 300px; 
     margin-top: 70px;
@@ -227,7 +227,7 @@
     align-items: center;
     justify-content: space-between;
  }
- #middleBoardClubes-1\.0{
+ #mainClubes-1\.0{
     width: 450px;
     height: auto;
     display: flex;
@@ -235,7 +235,7 @@
     align-items: center;
     justify-content: center;
  }
- #middleBoardClubes-1\.0\.0{
+ #mainClubes-1\.0\.0{
     position: absolute;
     left: 540px;
     width: 13px;
@@ -244,7 +244,7 @@
     filter: grayscale(50%);
     user-select: none;
  }
- #middleBoardClubes-1\.0\.1{
+ #mainClubes-1\.0\.1{
     width: 230px;
     height: 30px;
     padding: 7px;
@@ -254,7 +254,7 @@
     border-style: hidden;
     text-transform: uppercase;
  }
- #middleBoardClubes-1\.0\.2{
+ #mainClubes-1\.0\.2{
     position: absolute;
     z-index: 0;
     right: 535px;
@@ -269,40 +269,40 @@
  }
 
 
-/*MIDDLEBOARDEQUIPOCOMPETITIVO*/
-#middleBoardEquipoCompetitivo{
+/*MAINEQUIPOCOMPETITIVO*/
+#mainEquipoCompetitivo{
     width: 100%;
     height: 300px;
     background-color: rgb(62, 65, 69);
 }
    
 
-/*MIDDLEBOARDVALORACIONES*/
-#middleBoardValoraciones{
+/*MAINVALORACIONES*/
+#mainValoraciones{
     width: 100%;
     height: 300px;
     background-color: rgb(67, 75, 81);
 }
 
 
-/*MIDDLEBOARDREDESSOCIALES*/
-#middleBoardRedesSociales{
+/*MAINREDESSOCIALES*/
+#mainRedesSociales{
     width: 100%;
     height: 300px;
     background-color: rgb(24, 28, 30);
 }
 
 
-/*MIDDLEBOARDSOPORTE*/
-#middleBoardSoporte{
+/*MAINSOPORTE*/
+#mainSoporte{
     width: 100%;
     height: 300px;
     background-color: rgb(67, 75, 81);
 }
 
 
-/*MIDDLEBOARDSOBRENOSOTROS*/
-#middleBoardSobreNosotros{
+/*MAINSOBRENOSOTROS*/
+#mainSobreNosotros{
     width: 100%;
     height: 300px;
     background-color: rgb(62, 65, 69);

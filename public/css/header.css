@@ -3,8 +3,8 @@ body{
     padding: 0;
 }
 
-/* TOPBOARD */
-#topBoard{
+/* HEADER */
+#header{
     position: fixed;
     z-index: 1;
     background-color: rgb(29, 33, 35);
@@ -14,14 +14,14 @@ body{
     align-items: center;
     justify-content: center;
 }
-#topBoardButtons{
+#headerButtons{
     width: 850px;
     margin-left: 25px;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
-#topBoardTsComunityBrawlButton{
+#headerTsComunityBrawlButton{
     color: white;
     border-color: transparent;
     background-color: transparent;
@@ -30,13 +30,13 @@ body{
     transition-property: all;
     transition-duration: 0.3s;
 }
-#topBoardTsComunityBrawlButton:hover{
+#headerTsComunityBrawlButton:hover{
     color: rgb(0, 128, 255);
     cursor: pointer;
     transition-property: all;
     transition-duration: 0.3s;
 }
-.topBoardButtonsButton{
+.headerButtonsButton{
     color: white;
     border-color: transparent;
     background-color: transparent;
@@ -45,7 +45,7 @@ body{
     transition-property: all;
     transition-duration: 0.3s;
 }
-.topBoardButtonsButton:hover{
+.headerButtonsButton:hover{
     color: rgb(0, 128, 255);
     margin-left: 10px;
     margin-right: 10px;

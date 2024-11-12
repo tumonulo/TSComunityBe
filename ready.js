@@ -30,7 +30,8 @@ const startTime = Date.now();
       Database Name:   ${mongoose.connection.name}
       Database Size:   ${(mongooseStats.dataSize / (1024 * 1024 * 1024)).toFixed(2)} GB
       Time To Connect: ${timeToConnect} ms
-      `);  })
+      `);
+    })
 })()
 
 module.exports = client;

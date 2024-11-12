@@ -31,6 +31,14 @@ app.get("/Postulaciones", (req, res) => {
     res.sendFile(process.cwd() + "/public/html/applications.html")
 })
 
+app.get("/Header", (req, res) => {
+    res.sendFile(process.cwd() + "/public/html/header.html")
+})
+
+app.get("/Footer", (req, res) => {
+  res.sendFile(process.cwd() + "/public/html/footer.html")
+})
+
 app.use((req, res) => {
   res.status(404).sendFile(process.cwd() + "/public/html/404.html")
 })
