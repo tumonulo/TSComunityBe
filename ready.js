@@ -1,37 +1,50 @@
 const { Client, GatewayIntentBits, Partials } = require("discord.js");
-const mongoose = require("mongoose");
-const process = require("node:process");
 const client = new Client({ intents: [Object.keys(GatewayIntentBits)], partials: [Object.keys(Partials), Partials.Channel], allowedMentions: { parse: ["users"]}});
+const mongoose = require("mongoose");
 require("dotenv").config();
+const PORT = process.env.PORT ?? 3000;
 const TOKENDISCORDBOT = process.env.TOKENDISCORDBOT;
 const TOKENMONGODB = process.env.TOKENMONGODB
-const startTime = Date.now();
 
-(async () => {
-  client.login(TOKENDISCORDBOT).then(() => {
-    const timeToConnect = Date.now() - startTime;
-    console.log(`
-      ╔═══════════════════════════════════╗
-      ║    CONNECTED TO A DISCORD BOT     ║
-      ╚═══════════════════════════════════╝
-      Discord Bot Name: ${client.user.username}
-      Discord Bot ID:   ${client.user.id}
-      Time To Connect:  ${timeToConnect} ms
-      `);
-  });
 
-  await mongoose.connect(TOKENMONGODB).then(async () => {
-    const mongooseStats = await mongoose.connection.db.stats();
-    const timeToConnect = Date.now() - startTime;
-    console.log(`
-      ╔═══════════════════════════════════╗
-      ║      CONNECTED TO A DATABASE      ║
-      ╚═══════════════════════════════════╝
-      Database Name:   ${mongoose.connection.name}
-      Database Size:   ${(mongooseStats.dataSize / (1024 * 1024 * 1024)).toFixed(2)} GB
-      Time To Connect: ${timeToConnect} ms
-      `);
-    })
-})()
 
-// module.exports = client;
+async function ready(app) {
+  const startTime = Date.now();
+  Promise.all([
+    app.listen(PORT),
+    client.login(TOKENDISCORDBOT)
+  ]).then(() => {
+      const a = Date.now();
+      client.once("ready", () => {
+      const b = Date.now();
+      const elapsedTime = Date.now() - startTime;
+      const elapsedTimeStr = `${elapsedTime} ms`
+      console.log(`
+        ╔════════════════════════════════════╗╔════════════════════════════════════╗
+        ║           SERVER RUNNING           ║║        DISCORD BOT CONNECTED       ║
+        ╚════════════════════════════════════╝╚════════════════════════════════════╝
+        Localhost: http://localhost:${PORT}       Discord Bot Name: ${client.user.username}
+        Time To Initialize: ${elapsedTimeStr.padEnd(18)} Discord Bot ID: ${client.user.id}
+        `);
+        const c = Date.now();
+        const z = [];
+        z.push(a, b, c);
+        const guild = client.guilds.cache.get("1093864130030612521");
+        const channel = guild.channels.cache.get("1127922884568957010");
+        let mensaje = "";
+        z.forEach((date, i) => {
+          mensaje = mensaje + `\n ${i} - [<t:${date}:T>]`;
+        });
+        channel.send(mensaje);
+      })
+    }).catch(error => {
+      console.error(`
+        ╔═════════════════════════════════════╗
+        ║          CONNECTION ERROR           ║
+        ╚═════════════════════════════════════╝
+        Details: ${error.message}
+      `)
+  })
+}
+
+module.exports = ready;

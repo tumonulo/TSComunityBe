@@ -1,8 +1,6 @@
 const express = require("express");
+const ready = require("./ready.js");
 const app = express();
-require("dotenv").config();
-const PORT = process.env.PORT ?? 3000;
-const startTime = Date.now();
 
 process.on('unhandledRejection', async (reason, promise) => {
     console.log('Unhandled Rejection error at:', promise, 'reason', reason);
@@ -43,14 +41,4 @@ app.use((req, res) => {
   res.status(404).sendFile(process.cwd() + "/public/html/404.html")
 })
 
-app.listen(PORT, () => {
-    require("./ready");
-    
-    const timeToConnect = Date.now() - startTime;
-    console.log(`
-        ╔═══════════════════════════════════╗
-        ║          SERVER RUNNING           ║
-        ╚═══════════════════════════════════╝
-        Localhost:       http://localhost:${PORT}
-        Time To Connect: ${timeToConnect} ms `);
-    })
+ready(app);
