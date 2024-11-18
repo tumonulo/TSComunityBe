@@ -6,9 +6,6 @@ function statsClubs() {
     clubs.forEach((club, i) => {
         statsClubs = statsClubs + ``
 
-        if (clubs.length != i) {
-            //2
-        }
     })
     return statsClubs;
 }

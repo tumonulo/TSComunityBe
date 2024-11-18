@@ -15,6 +15,8 @@ async function getClubes() {
             }
         })
         const response = await request.json();
+        response.averageTrophies = response.trophies / response.members.length;
+        response.recommendTrophies = response.trophies / response.members.length / 2 * 3;
         clubs.push(response);
     });
     return clubs;
