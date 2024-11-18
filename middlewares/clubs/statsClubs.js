@@ -1,15 +1,16 @@
-const clubs = require("./getClubs.js");
+const getClubs = require("./getClubs.js");
+const clubs = getClubs();
 
 function statsClubs() {
     let statsClubs = ""
-    clubs.forEach(club, index => {
-        statsClubs = statsClubs + `
-       `
+    clubs.forEach((club, i) => {
+        statsClubs = statsClubs + ``
 
-        if (clubs.length != index) {
+        if (clubs.length != i) {
             //2
         }
     })
+    return statsClubs;
 }
 
-module.exports = statsClubs()
+module.exports = statsClubs;

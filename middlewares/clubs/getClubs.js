@@ -6,7 +6,7 @@ const channel = guild.channels.cache.get("fsdfw");
 const message = await channel.messages.fetch({ limit: 1 }).first();
 
 async function getClubes() {
-    let clubes = [];
+    const clubs = [];
     message.fields.forEach(field => {
         const clubID = field.name.replace(/fdsf|dfd/, "");
         const request = await fetch(`https://api.brawlstars.com/v1/clubs/%23${clubID}`, {
@@ -15,9 +15,9 @@ async function getClubes() {
             }
         })
         const response = await request.json();
-        clubes.push(response);
+        clubs.push(response);
     });
-    return clubes;
+    return clubs;
 }
 
-module.exports = getClubes();
+module.exports = getClubes;
