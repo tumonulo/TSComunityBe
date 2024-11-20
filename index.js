@@ -1,6 +1,7 @@
 const express = require("express");
-const ready = require("./ready.js");
+const { ready } = require("./ready.js");
 const app = express();
+const getClubs = require("./controllers/clubs/getClubs.js");
 
 process.on('unhandledRejection', async (reason, promise) => {
     console.log('Unhandled Rejection error at:', promise, 'reason', reason);

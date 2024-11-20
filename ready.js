@@ -14,9 +14,7 @@ async function ready(app) {
     app.listen(PORT),
     client.login(TOKENDISCORDBOT)
   ]).then(() => {
-      const a = Date.now();
       client.once("ready", () => {
-      const b = Date.now();
       const elapsedTime = Date.now() - startTime;
       const elapsedTimeStr = `${elapsedTime} ms`
       console.log(`
@@ -26,16 +24,6 @@ async function ready(app) {
         Localhost: http://localhost:${PORT}       Discord Bot Name: ${client.user.username}
         Time To Initialize: ${elapsedTimeStr.padEnd(18)} Discord Bot ID: ${client.user.id}
         `);
-        const c = Date.now();
-        const z = [];
-        z.push(a, b, c);
-        const guild = client.guilds.cache.get("1093864130030612521");
-        const channel = guild.channels.cache.get("1127922884568957010");
-        let mensaje = "";
-        z.forEach((date, i) => {
-          mensaje = mensaje + `\n ${i} - [<t:${date}:T>]`;
-        });
-        channel.send(mensaje);
       })
     }).catch(error => {
       console.error(`
@@ -47,4 +35,7 @@ async function ready(app) {
   })
 }
 
-module.exports = ready;
+module.exports = {
+  ready,
+  client
+};
