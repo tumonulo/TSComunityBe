@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const PORT = process.env.PORT ?? 3000;
 const TOKENDISCORDBOT = process.env.TOKENDISCORDBOT;
-const TOKENMONGODB = process.env.TOKENMONGODB
 
 async function ready(app) {
   const startTime = Date.now();
