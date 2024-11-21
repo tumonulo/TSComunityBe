@@ -6,8 +6,6 @@ const PORT = process.env.PORT ?? 3000;
 const TOKENDISCORDBOT = process.env.TOKENDISCORDBOT;
 const TOKENMONGODB = process.env.TOKENMONGODB
 
-
-
 async function ready(app) {
   const startTime = Date.now();
   Promise.all([
@@ -19,7 +17,7 @@ async function ready(app) {
       const elapsedTimeStr = `${elapsedTime} ms`
       console.log(`
         ╔════════════════════════════════════╗╔════════════════════════════════════╗
-        ║           SERVER RUNNING           ║║        DISCORD BOT CONNECTED       ║
+        ║          SERVER LISTENING          ║║        DISCORD BOT CONNECTED       ║
         ╚════════════════════════════════════╝╚════════════════════════════════════╝
         Localhost: http://localhost:${PORT}       Discord Bot Name: ${client.user.username}
         Time To Initialize: ${elapsedTimeStr.padEnd(18)} Discord Bot ID: ${client.user.id}
