@@ -15,7 +15,6 @@ process.on('unhandledRejection', async (reason, promise) => {
     console.log('Uncaught Expection Monitor', err, origin);
   });
 
-
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
