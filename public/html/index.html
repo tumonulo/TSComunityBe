@@ -6,11 +6,25 @@
     <title>TS Comunity Brawl - La mejor comunidad de Brawl Stars</title>
     <meta name="description" content="TS Comunity Brawl es una comunidad enfocado en el videojuego Brawl Stars.">
     <link rel="icon" href="../assets/icons/iconTS.png">
-    <link rel="stylesheet" href="../css/classes.css">
+    <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 <body>
-    <iframe src="/Header" style="border:none; width:100%; height:auto; position:fixed; padding: 0px; margin: 0px;" id="topBoard"></iframe>
+    <div id="header">
+        <input type="button" value="T S  C O M U N I T Y  B R A W L" id="headerTsComunityBrawlButton" onclick="sendMessage('headerTsComunityBrawlOnclick')">
+        <div id="headerButtons">
+            <input type="button" value="Inicio" class="headerButtonsButton" onclick="sendMessage('headerInicioOnclick')">
+            <input type="button" value="Discord" class="headerButtonsButton" onclick="sendMessage('headerDiscordOnclick')">
+            <input type="button" value="Clubes" class="headerButtonsButton" onclick="sendMessage('headerClubesOnclick')">
+            <input type="button" value="Equipo Competitivo" class="headerButtonsButton" onclick="sendMessage('headerEquipoCompetitivoOnclick')">
+            <input type="button" value="Valoraciones" class="headerButtonsButton" onclick="sendMessage('headerValoracionesOnclick')">
+            <input type="button" value="Redes Sociales" class="headerButtonsButton" onclick="sendMessage('headerRedesSocialesOnclick')"">
+            <input type="button" value="Soporte" class="headerButtonsButton" onclick="sendMessage('headerSoporteOnclick')">
+            <input type="button" value="Sobre Nosotros" class="headerButtonsButton" onclick="sendMessage('headerSobreNosotrosOnclick')">
+        </div>
+    </div>
     <div id="main">
         <div id="mainInicio">
             <div id="mainInicio-0">
@@ -116,7 +130,9 @@
             Sobre Nosotros
         </div>
     </div>
-    <iframe src="./Footer" style="border:none; width:100%; height:300px;"></iframe>
+    <div id="footer">
+        Bottom
+    </div>
 </body>
 <script src="../js/redirects.js"></script>
 <script src="../js/ui.js"></script>

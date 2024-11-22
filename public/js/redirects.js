@@ -1,28 +1,3 @@
-window.addEventListener("message", event => {
-    if (event.origin === window.location.origin) {
-        if (event.data === "topBoardTsComunityBrawlOnclick") {
-            topBoardTsComunityBrawlOnclick();
-        } else if (event.data === "topBoardInicioOnclick") {
-            topBoardInicioOnclick();
-        } else if (event.data === "topBoardDiscordOnclick") {
-            topBoardDiscordOnclick();
-        } else if (event.data === "topBoardClubesOnclick") {
-            topBoardClubesOnclick();
-        } else if (event.data === "topBoardEquipoCompetitivoOnclick") {
-            topBoardEquipoCompetitivoOnclick();
-        } else if (event.data === "topBoardValoracionesOnclick") {
-            topBoardValoracionesOnclick();
-        } else if (event.data === "topBoardRedesSocialesOnclick") {
-            topBoardRedesSocialesOnclick();
-        } else if (event.data === "topBoardSoporteOnclick") {
-            topBoardSoporteOnclick();
-        } else if (event.data === "topBoardSobreNosotrosOnclick") {
-            topBoardSobreNosotrosOnclick();
-        }
-    }
-});
-
-
 //MAIN
 function topBoardTsComunityBrawlOnclick() {
     if (window.location.href != "https://tumonulo.github.io/TSComunityBrawl/") {

@@ -1,12 +1,21 @@
-require("discord.js");
-const guild = client.guiids.cache.get("idguild");
+const { client } = require("../../ready.js")
+const guild = client.guilds.cache.get("1093864130030612521");
+
+async function statsDiscord() {
+    const members = guild.memberCount
+    const onlineMembers = guild.members.cache.filter(member => 
+    ['online', 'idle', 'dnd'].includes(member.presence?.status)).size;
+    guild.channels.forEach(channel => {
+        channel => channel.messages;
+    })    
+    return {
+        members,
+        onlineMembers
+    }
+}
 
 
-const activeMembers = message.guild.members.fetch({ withPresences: true }).filter(member => member.presence?.status === "online" || member => member.presence?.status === "idle" || member => member.presence?.status === "dnd").size;
 
-guild.channels.forEach(channel => {
-    channel => channel.messages;
-})
-
-console.log(activeMembers)
-console.log(guild.memberCount);
+module.exports = {
+    statsDiscord
+}
