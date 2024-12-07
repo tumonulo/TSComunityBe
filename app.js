@@ -21,11 +21,11 @@ process.on('unhandledRejection', async (reason, promise) => {
 
 app.use(express.static("public"))
 
-app.get("/", router)
+app.use("/", router)
 
 app.use("/clubes", clubsRouter)
 
-app.get("/postulaciones", applicationsRouter)
+app.use("/postulaciones", applicationsRouter)
 
 app.use("/discord", discordRouter)
 
