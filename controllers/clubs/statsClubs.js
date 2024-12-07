@@ -1,8 +1,8 @@
-const getClubs = require("./getClubs.js");
+const getClubs = require('./getClubs.js');
 const clubs = getClubs();
 
 function statsClubs() {
-    let statsClubs = ""
+    let statsClubs = ''
     clubs.forEach((club, i) => {
         statsClubs = statsClubs + ``
 

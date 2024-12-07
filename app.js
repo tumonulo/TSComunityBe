@@ -1,10 +1,10 @@
-const express = require("express")
+const express = require('express')
 const app = express()
-const { router } = require("./routes/index.js")
-const { applicationsRouter } = require("./routes/applications.js")
-const { clubsRouter } = require("./routes/clubs.js")
-const { discordRouter } = require("./routes/discord.js")
-const { ready } = require("./ready.js")
+const { router } = require('./routes/index.js')
+const { applicationsRouter } = require('./routes/applications.js')
+const { clubsRouter } = require('./routes/clubs.js')
+const { discordRouter } = require('./routes/discord.js')
+const { ready } = require('./ready.js')
 
 
 process.on('unhandledRejection', async (reason, promise) => {
@@ -19,18 +19,18 @@ process.on('unhandledRejection', async (reason, promise) => {
     console.log('Uncaught Expection Monitor', err, origin)
   });
 
-app.use(express.static("public"))
+app.use(express.static('public'))
 
-app.use("/", router)
+app.use('/', router)
 
-app.use("/clubes", clubsRouter)
+app.use('/clubes', clubsRouter)
 
-app.use("/postulaciones", applicationsRouter)
+app.use('/postulaciones', applicationsRouter)
 
-app.use("/discord", discordRouter)
+app.use('/discord', discordRouter)
 
 app.use((req, res) => {
-  res.status(404).sendFile(process.cwd() + "/public/html/404.html")
+  res.status(404).sendFile(process.cwd() + '/public/html/404.html')
 })
 
 ready(app)
