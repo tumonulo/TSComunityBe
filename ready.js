@@ -2,7 +2,7 @@ const { Client, GatewayIntentBits, Partials } = require("discord.js");
 const client = new Client({ intents: [Object.keys(GatewayIntentBits)], partials: [Object.keys(Partials), Partials.Channel], allowedMentions: { parse: ["users"]}});
 const mongoose = require("mongoose");
 require("dotenv").config();
-const PORT = process.env.PORT ?? 3000;
+const PORT = process.env.PORT ?? 8080;
 const TOKENDISCORDBOT = process.env.TOKENDISCORDBOT;
 
 async function ready(app) {

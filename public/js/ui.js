@@ -1,39 +1,39 @@
-const middleBoardClubesInputText = document.getElementById("middleBoardClubes-1.0.1")
-const middleBoardClubesSendButton = document.getElementById("middleBoardClubes-1.0.2")
+const mainClubesInputText = document.getElementById("mainClubes-1.0.1")
+const mainClubesSendButton = document.getElementById("mainClubes-1.0.2")
 
 
-middleBoardClubesInputText.addEventListener("keydown", event => {
+mainClubesInputText.addEventListener("keydown", event => {
     if (event.key === "#") {
         event.preventDefault();
     }
 })
 
-middleBoardClubesInputText.addEventListener("input", () => {
-    if (middleBoardClubesInputText.value === "") {
-        middleBoardClubesSendButton.style.filter = "grayscale(60%)";
-        middleBoardClubesSendButton.style.cursor = "default";
+mainClubesInputText.addEventListener("input", () => {
+    if (mainClubesInputText.value === "") {
+        mainClubesSendButton.style.filter = "grayscale(60%)";
+        mainClubesSendButton.style.cursor = "default";
     } else {
-        middleBoardClubesSendButton.style.filter = "grayscale(0%)";
-        middleBoardClubesSendButton.style.cursor = "default";
+        mainClubesSendButton.style.filter = "grayscale(0%)";
+        mainClubesSendButton.style.cursor = "default";
     }
 })
 
-middleBoardClubesSendButton.addEventListener("mouseenter", () => {
-    if (middleBoardClubesInputText.value != "") {
-        middleBoardClubesSendButton.style.filter = "grayscale(20%)";
-        middleBoardClubesSendButton.style.cursor = "pointer";
+mainClubesSendButton.addEventListener("mouseenter", () => {
+    if (mainClubesInputText.value != "") {
+        mainClubesSendButton.style.filter = "grayscale(20%)";
+        mainClubesSendButton.style.cursor = "pointer";
     } else {
-        middleBoardClubesSendButton.style.filter = "grayscale(60%)";
-        middleBoardClubesSendButton.style.cursor = "default";
+        mainClubesSendButton.style.filter = "grayscale(60%)";
+        mainClubesSendButton.style.cursor = "default";
     }
 })
 
-middleBoardClubesSendButton.addEventListener("mouseleave", ()  => {
-    if (middleBoardClubesInputText.value === "") {
-        middleBoardClubesSendButton.style.filter = "grayscale(60%)";
-        middleBoardClubesSendButton.style.cursor = "default";
+mainClubesSendButton.addEventListener("mouseleave", ()  => {
+    if (mainClubesInputText.value === "") {
+        mainClubesSendButton.style.filter = "grayscale(60%)";
+        mainClubesSendButton.style.cursor = "default";
     } else {
-        middleBoardClubesSendButton.style.filter = "grayscale(0%)";
-        middleBoardClubesSendButton.style.cursor = "default";
+        mainClubesSendButton.style.filter = "grayscale(0%)";
+        mainClubesSendButton.style.cursor = "default";
     }
 })

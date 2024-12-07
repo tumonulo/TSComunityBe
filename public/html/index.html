@@ -1,139 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>TS Comunity Brawl - La mejor comunidad de Brawl Stars</title>
-    <meta name="description" content="TS Comunity Brawl es una comunidad enfocado en el videojuego Brawl Stars.">
-    <link rel="icon" href="../assets/icons/iconTS.png">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <meta name='description' content='TS Comunity Brawl es una comunidad enfocado en el videojuego Brawl Stars.'>
+    <link rel='icon' href='../assets/icons/iconTS.png'>
+    <link rel='stylesheet' href='../css/global.css'>
+    <link rel='stylesheet' href='../css/index.css'>
+    <link rel='stylesheet' href='../css/header.css'>
+    <link rel='stylesheet' href='../css/footer.css'>
 </head>
 <body>
-    <div id="header">
-        <input type="button" value="T S  C O M U N I T Y  B R A W L" id="headerTsComunityBrawlButton" onclick="sendMessage('headerTsComunityBrawlOnclick')">
-        <div id="headerButtons">
-            <input type="button" value="Inicio" class="headerButtonsButton" onclick="sendMessage('headerInicioOnclick')">
-            <input type="button" value="Discord" class="headerButtonsButton" onclick="sendMessage('headerDiscordOnclick')">
-            <input type="button" value="Clubes" class="headerButtonsButton" onclick="sendMessage('headerClubesOnclick')">
-            <input type="button" value="Equipo Competitivo" class="headerButtonsButton" onclick="sendMessage('headerEquipoCompetitivoOnclick')">
-            <input type="button" value="Valoraciones" class="headerButtonsButton" onclick="sendMessage('headerValoracionesOnclick')">
-            <input type="button" value="Redes Sociales" class="headerButtonsButton" onclick="sendMessage('headerRedesSocialesOnclick')"">
-            <input type="button" value="Soporte" class="headerButtonsButton" onclick="sendMessage('headerSoporteOnclick')">
-            <input type="button" value="Sobre Nosotros" class="headerButtonsButton" onclick="sendMessage('headerSobreNosotrosOnclick')">
+    <header id='header'>
+        <input type='button' value='T S  C O M U N I T Y  B R A W L' id='headerTsComunityBrawlButton' onclick='headerTsComunityBrawlOnclick()'>
+        <div id='headerButtons'>
+            <input type='button' value='Inicio' class='headerButtonsButton' onclick='scrollToSection("Inicio")'>
+            <input type='button' value='Discord' class='headerButtonsButton' onclick='scrollToSection("Discord")'>
+            <input type='button' value='Clubes' class='headerButtonsButton' onclick='scrollToSection("Clubes")'>
+            <input type='button' value='Bot Shop' class='headerButtonsButton' onclick='scrollToSection("Bot Shop")'>
+            <input type='button' value='Valoraciones' class='headerButtonsButton' onclick='scrollToSection("Valoraciones")'>
+            <input type='button' value='Redes Sociales' class='headerButtonsButton' onclick='scrollToSection("Redes Sociales")'>
+            <input type='button' value='Soporte' class='headerButtonsButton' onclick='scrollToSection("Soporte")'>
+            <input type='button' value='Sobre Nosotros' class='headerButtonsButton' onclick='scrollToSection("Sobre Nosotros")'>
         </div>
-    </div>
-    <div id="main">
-        <div id="mainInicio">
-            <div id="mainInicio-0">
-                <div id="mainInicioOverlay" onclick="mainInicioOverlaySetValue()"></div>
-                <div id="mainInicio-0.0" class="title">
+    </header>
+    <div id='main'>
+        <div id='mainInicio'>
+            <div id='mainInicio-0'>
+                <div id='mainInicioOverlay' onclick='mainInicioOverlaySetValue()'>njk</div>
+                <div id='mainInicio-0.0' class='title'>
                         La Mejor Comunidad<br>
                         de Brawl Stars
                 </div>
-                <div id="mainInicio-0.1">
+                <div id='mainInicio-0.1'>
                     ¡Servidor de Discord, Clubes top global, Equipo competitivo!
                 </div>
-                <div id="mainInicio-0.2">
-                    <input type="button" value="Discord" id="mainInicio-0.2-button-0" onclick="mainInicioDiscordOnclick()">
-                    <input type="button" value="Clubes" id="mainInicio-0.2-button-1" onclick="mainInicioClubesOnclick()">
+                <div id='mainInicio-0.2'>
+                    <input type='button' value='Discord' id='mainInicio-0.2-button-0' onclick='mainInicioDiscordOnclick()'>
+                    <input type='button' value='Clubes' id='mainInicio-0.2-button-1' onclick='mainInicioClubesOnclick()'>
                 </div>
             </div>
-            <img src="./assets/icons/iconTS.png" alt="iconTS" id="mainInicio-1">
+            <img src='./assets/icons/iconTS.png' alt='iconTS' id='mainInicio-1'>
         </div>
-        <div id="mainDiscord">
-            <div id="mainDiscord-0">
-                <div class="title">
+        <div id='mainDiscord'>
+            <div id='mainDiscord-0'>
+                <div class='title'>
                     Servidor de Discord
                 </div>
-                <div id="mainDiscord-0.1" class="text">
+                <div id='mainDiscord-0.1' class='text'>
                     El servidor de Discord de TS Comunity Brawl es una espacio vibrante y amigable donde jugadores de Brawl Stars y de otros videojuegos pueden unirse para disfrutar de una experiencia en línea en un ambiente completamente libre de toxicidad.
                 </div>
-                <input type="button" value="Unirse a la Comunidad" class="button" onclick="mainDiscordDiscordOnclick()">
+                <input type='button' value='Unirse a la Comunidad' class='button' onclick='mainDiscordDiscordOnclick()'>
             </div>
-            <div id="mainDiscord-1">
-                <div class="mainDiscord-1-mainContainer">
-                    <div id="mainDiscord-1.0" class="title"></div>
-                    <div class="text">
-                        Miembros en nuestro <a href="http://discord.gg/8nu3ZdDkp7" target="_blank" rel="noopener noreferrer" class="link">servidor de Discord</a>
+            <div id='mainDiscord-1'>
+                <div class='mainDiscord-1-mainContainer'>
+                    <div id='mainDiscord-1.0' class='title'></div>
+                    <div class='text'>
+                        Miembros en nuestro <a href='http://discord.gg/8nu3ZdDkp7' target='_blank' rel='noopener noreferrer' class='link'>servidor de Discord</a>
                     </div>
                 </div>
-                <div class="mainDiscord-1-separatingLine"></div>
-                <div class="mainDiscord-1-mainContainer">
-                    <div id="mainDiscord-1.1" class="title"></div>
-                    <div class="text">
-                        Miembros activos en nuestro <a href="http://discord.gg/8nu3ZdDkp7" target="_blank" rel="noopener noreferrer" class="link">servidor de Discord</a>
+                <div class='mainDiscord-1-separatingLine'></div>
+                <div class='mainDiscord-1-mainContainer'>
+                    <div id='mainDiscord-1.1' class='title'></div>
+                    <div class='text'>
+                        Miembros activos en nuestro <a href='http://discord.gg/8nu3ZdDkp7' target='_blank' rel='noopener noreferrer' class='link'>servidor de Discord</a>
                     </div>
                 </div>
-                <div class="mainDiscord-1-separatingLine"></div>
-                <div class="mainDiscord-1-mainContainer">
-                    <div id="mainDiscord-1.2" class="title"></div>
-                    <div class="text">
-                        Mensages enviados hoy en nuestro <a href="http://discord.gg/8nu3ZdDkp7" target="_blank" rel="noopener noreferrer" class="link">servidor de Discord</a>
+                <div class='mainDiscord-1-separatingLine'></div>
+                <div class='mainDiscord-1-mainContainer'>
+                    <div id='mainDiscord-1.2' class='title'></div>
+                    <div class='text'>
+                        Mensages enviados hoy en nuestro <a href='http://discord.gg/8nu3ZdDkp7' target='_blank' rel='noopener noreferrer' class='link'>servidor de Discord</a>
                     </div>
                 </div>
             </div>
-            <div id="mainDiscord-2">
-                <div class="title">
+            <div id='mainDiscord-2'>
+                <div class='title'>
                     Postulaciones
                 </div>
-                <div id="mainDiscord-2.1" class="text">
+                <div id='mainDiscord-2.1' class='text'>
                     Una de las mejores maneras de contribuir activamente a la comunidad es postulandose como Staff, Editor y Cazador de Alianzas.
                 </div>
-                <input type="button" value="Postularse" class="button" onclick="mainDiscordPostulacionesOnclick()">
+                <input type='button' value='Postularse' class='button' onclick='mainDiscordPostulacionesOnclick()'>
             </div>
         </div>
-        <div id="mainClubes">
-            <div id="mainClubes-0">
-                <div class="title">
+        <div id='mainClubes'>
+            <div id='mainClubes-0'>
+                <div class='title'>
                     Clubes
                 </div>
-                <div class="text">
+                <div class='text'>
                     fgvbhjklñjhbvbkljdkjnfsijdvnhdsiovjdspkijnbvhfvskjodp
                 </div>
-                <div id="mainClubes-0.0">
-                    <div class="mainClubes-0-mainContainer"></div>
-                    <div id="mainClubes-0-separatingLine"></div>
-                    <div class="mainClubes-0-mainContainer"></div>
+                <div id='mainClubes-0.0'>
+                    <div class='mainClubes-0-mainContainer'></div>
+                    <div id='mainClubes-0-separatingLine'></div>
+                    <div class='mainClubes-0-mainContainer'></div>
                 </div>
-                <input type="button" value="Ver Clubes" class="button" onclick="mainClubesVerClubesOnclick()">
+                <input type='button' value='Ver Clubes' class='button' onclick='mainClubesVerClubesOnclick()'>
             </div>
-            <div id="mainClubes-1">
-                <div class="title">
+            <div id='mainClubes-1'>
+                <div class='title'>
                     Buscar Club
                 </div>
-                <div class="text">
+                <div class='text'>
                     dxgfchdjhkjifjhdsuifefsehj
                 </div>
-                    <form method="post" id="mainClubes-1.0">
-                        <img src="./assets/ui/hashtag.png" alt="hashtag" id="mainClubes-1.0.0">
-                        <input type="text" name="mainClubes-1.0.1" placeholder="ID de cuenta" id="mainClubes-1.0.1" autocapitalize="characters">
-                        <input type="submit" name="mainClubes-1.0.2" value="" id="mainClubes-1.0.2">
+                    <form method='post' id='mainClubes-1.0'>
+                        <img src='./assets/ui/hashtag.png' alt='hashtag' id='mainClubes-1.0.0'>
+                        <input type='text' name='mainClubes-1.0.1' placeholder='ID de cuenta' id='mainClubes-1.0.1' autocapitalize='characters'>
+                        <input type='submit' name='mainClubes-1.0.2' value='' id='mainClubes-1.0.2'>
                     </form>
             </div>
         </div>
-        <div id="mainEquipoCompetitivo">
-            Equipo Competitivo
+        <div id='mainBotShop'>
+            Bot Shop
         </div>
-        <div id="mainValoraciones">
+        <div id='mainValoraciones'>
             Valoraciones
         </div>
-        <div id="mainRedesSociales">
+        <div id='mainRedesSociales'>
             Redes Sociales
         </div>
-        <div id="mainSoporte">
+        <div id='mainSoporte'>
             Soporte
         </div>
-        <div id="mainSobreNosotros">
+        <div id='mainSobreNosotros'>
             Sobre Nosotros
         </div>
     </div>
-    <div id="footer">
+    <div id='footer'>
         Bottom
     </div>
 </body>
-<script src="../js/redirects.js"></script>
-<script src="../js/ui.js"></script>
+<script src='../js/redirects.js'></script>
+<script src='../js/ui.js'></script>
 </html>

@@ -1,122 +1,135 @@
 //MAIN
-function topBoardTsComunityBrawlOnclick() {
-    if (window.location.href != "https://tumonulo.github.io/TSComunityBrawl/") {
-        window.location.href = "https://tumonulo.github.io/TSComunityBrawl/";
+function headerTsComunityBrawlOnclick() {
+    if (!window.location.pathname.endsWith('index.js')) {
+        window.location.href = "../html/index.html"
     }
 }
-function topBoardInicioOnclick() {
-    if (window.location.href != "https://tumonulo.github.io/TSComunityBrawl/") {
-        window.location.href = "https://tumonulo.github.io/TSComunityBrawl/";
-    }
-    window.addEventListener
-    const middleBoardInicio = document.getElementById('middleBoardInicio');
-    middleBoardInicio.scrollIntoView({ behavior: 'smooth' });
-}
-function topBoardDiscordOnclick() {
-    if (window.location.href != "https://tumonulo.github.io/TSComunityBrawl/") {
-        window.location.href = "https://tumonulo.github.io/TSComunityBrawl/";
-    }
-    const middleBoardDiscord = document.getElementById('middleBoardDiscord');
-    const middleBoardDiscordPosition = middleBoardDiscord.getBoundingClientRect().top;
-    const middleBoardDiscordPositionToScroll = window.scrollY + middleBoardDiscordPosition - 100;
+
+function scrollToSection(section) {
+    // if (!window.location.pathname.endsWith('index.js')) {
+    //     window.location.href = "../html/index.html"
+    // }
+    const main = document.getElementById(`main${section}`);
+    const mainPosition = main.getBoundingClientRect().top;
+    const mainPositionToScroll = window.scrollY + mainPosition - 100;
     window.scrollTo({
-        top: middleBoardDiscordPositionToScroll,
+        top: mainPositionToScroll,
         behavior: 'smooth'
     });
 }
-function topBoardClubesOnclick() {
-    if (window.location.href != "https://tumonulo.github.io/TSComunityBrawl/") {
-        window.location.href = "https://tumonulo.github.io/TSComunityBrawl/";
-    }
-    const middleBoardClubes = document.getElementById('middleBoardClubes');
-    const middleBoardClubesPosition = middleBoardClubes.getBoundingClientRect().top;
-    const middleBoardClubesPositionToScroll = window.scrollY + middleBoardClubesPosition - 38;
-    window.scrollTo({
-        top: middleBoardClubesPositionToScroll,
-        behavior: 'smooth'
-    });
-}
-function topBoardEquipoCompetitivoOnclick() {
-    if (window.location.href != "https://tumonulo.github.io/TSComunityBrawl/") {
-        window.location.href = "https://tumonulo.github.io/TSComunityBrawl/";
-    }
-    const middleBoardEquipoCompetitivo = document.getElementById('middleBoardEquipoCompetitivo');
-    const middleBoardEquipoCompetitivoPosition = middleBoardEquipoCompetitivo.getBoundingClientRect().top;
-    const middleBoardEquipoCompetitivoPositionToScroll = window.scrollY + middleBoardEquipoCompetitivoPosition - 38;
-    window.scrollTo({
-        top: middleBoardEquipoCompetitivoPositionToScroll,
-        behavior: 'smooth'
-    });
-}
-function topBoardValoracionesOnclick() {
-    if (window.location.href != "https://tumonulo.github.io/TSComunityBrawl/") {
-        window.location.href = "https://tumonulo.github.io/TSComunityBrawl/";
-    }
-    const middleBoardValoraciones = document.getElementById('middleBoardValoraciones');
-    const middleBoardValoracionesPosition = middleBoardValoraciones.getBoundingClientRect().top;
-    const middleBoardValoracionesPositionToScroll = window.scrollY + middleBoardValoracionesPosition - 38;
-    window.scrollTo({
-        top: middleBoardValoracionesPositionToScroll,
-        behavior: 'smooth'
-    });
-}
-function topBoardRedesSocialesOnclick() {
-    if (window.location.href != "https://tumonulo.github.io/TSComunityBrawl/") {
-        window.location.href = "https://tumonulo.github.io/TSComunityBrawl/";
-    }
-    const middleBoardRedesSociales = document.getElementById('middleBoardRedesSociales');
-    const middleBoardRedesSocialesPosition = middleBoardRedesSociales.getBoundingClientRect().top;
-    const middleBoardRedesSocialesPositionToScroll = window.scrollY + middleBoardRedesSocialesPosition - 38;
-    window.scrollTo({
-        top: middleBoardRedesSocialesPositionToScroll,
-        behavior: 'smooth'
-    });
-}
-function topBoardSoporteOnclick() {
-    if (window.location.href != "https://tumonulo.github.io/TSComunityBrawl/") {
-        window.location.href = "https://tumonulo.github.io/TSComunityBrawl/";
-    }
-    const middleBoardSoporte = document.getElementById('middleBoardSoporte');
-    const middleBoardSoportePosition = middleBoardSoporte.getBoundingClientRect().top;
-    const middleBoardSoportePositionToScroll = window.scrollY + middleBoardSoportePosition - 38;
-    window.scrollTo({
-        top: middleBoardSoportePositionToScroll,
-        behavior: 'smooth'
-    });
-}
-function topBoardSobreNosotrosOnclick() {
-    if (window.location.href != "https://tumonulo.github.io/TSComunityBrawl/") {
-        window.location.href = "https://tumonulo.github.io/TSComunityBrawl/";
-    }
-    const middleBoardSobreNosotros = document.getElementById('middleBoardSobreNosotros');
-    const middleBoardSobreNosotrosPosition = middleBoardSobreNosotros.getBoundingClientRect().top;
-    const middleBoardSobreNosotrosPositionToScroll = window.scrollY + middleBoardSobreNosotrosPosition - 38;
-    window.scrollTo({
-        top: middleBoardSobreNosotrosPositionToScroll,
-        behavior: 'smooth'
-    });
-}
+
+// function headerInicioOnclick() {
+//     if (!window.location.pathname.endsWith('index.js')) {
+//         window.location.href = "../html/index.html"
+//     }
+//     const mainInicio = document.getElementById('mainInicio');
+//     mainInicio.scrollIntoView({ behavior: 'smooth' });
+// }
+// function headerDiscordOnclick() {
+//     if (!window.location.pathname.endsWith('index.js')) {
+//         window.location.href = "../html/index.html"
+//     }
+//     const mainDiscord = document.getElementById('mainDiscord');
+//     const mainDiscordPosition = mainDiscord.getBoundingClientRect().top;
+//     const mainDiscordPositionToScroll = window.scrollY + mainDiscordPosition - 100;
+//     window.scrollTo({
+//         top: mainDiscordPositionToScroll,
+//         behavior: 'smooth'
+//     });
+// }
+// function headerClubesOnclick() {
+//     if (!window.location.pathname.endsWith('index.js')) {
+//         window.location.href = "/index.html"
+//     }
+//     const mainClubes = document.getElementById('mainClubes');
+//     const mainClubesPosition = mainClubes.getBoundingClientRect().top;
+//     const mainClubesPositionToScroll = window.scrollY + mainClubesPosition - 38;
+//     window.scrollTo({
+//         top: mainClubesPositionToScroll,
+//         behavior: 'smooth'
+//     });
+// }
+// function headerBotShopOnclick() {
+//     if (!window.location.pathname.endsWith('index.js')) {
+//         window.location.href = "/index.html"
+//     }
+//     const mainEquipoCompetitivo = document.getElementById('mainEquipoCompetitivo');
+//     const mainEquipoCompetitivoPosition = mainEquipoCompetitivo.getBoundingClientRect().top;
+//     const mainEquipoCompetitivoPositionToScroll = window.scrollY + mainEquipoCompetitivoPosition - 38;
+//     window.scrollTo({
+//         top: mainEquipoCompetitivoPositionToScroll,
+//         behavior: 'smooth'
+//     });
+// }
+// function headerValoracionesOnclick() {
+//     if (!window.location.pathname.endsWith('index.js')) {
+//         window.location.href = "/index.html"
+//     }
+//     const mainValoraciones = document.getElementById('mainValoraciones');
+//     const mainValoracionesPosition = mainValoraciones.getBoundingClientRect().top;
+//     const mainValoracionesPositionToScroll = window.scrollY + mainValoracionesPosition - 38;
+//     window.scrollTo({
+//         top: mainValoracionesPositionToScroll,
+//         behavior: 'smooth'
+//     });
+// }
+// function headerRedesSocialesOnclick() {
+//     if (!window.location.pathname.endsWith('index.js')) {
+//         window.location.href = "/index.html"
+//     }
+//     const mainRedesSociales = document.getElementById('mainRedesSociales');
+//     const mainRedesSocialesPosition = mainRedesSociales.getBoundingClientRect().top;
+//     const mainRedesSocialesPositionToScroll = window.scrollY + mainRedesSocialesPosition - 38;
+//     window.scrollTo({
+//         top: mainRedesSocialesPositionToScroll,
+//         behavior: 'smooth'
+//     });
+// }
+// function headerSoporteOnclick() {
+//     if (!window.location.pathname.endsWith('index.js')) {
+//         window.location.href = "/index.html"
+//     }
+//     const mainSoporte = document.getElementById('mainSoporte');
+//     const mainSoportePosition = mainSoporte.getBoundingClientRect().top;
+//     const mainSoportePositionToScroll = window.scrollY + mainSoportePosition - 38;
+//     window.scrollTo({
+//         top: mainSoportePositionToScroll,
+//         behavior: 'smooth'
+//     });
+// }
+// function headerSobreNosotrosOnclick() {
+//     if (!window.location.pathname.endsWith('index.js')) {
+//         window.location.href = "/index.html"
+//     }
+//     const mainSobreNosotros = document.getElementById('mainSobreNosotros');
+//     const mainSobreNosotrosPosition = mainSobreNosotros.getBoundingClientRect().top;
+//     const mainSobreNosotrosPositionToScroll = window.scrollY + mainSobreNosotrosPosition - 38;
+//     window.scrollTo({
+//         top: mainSobreNosotrosPositionToScroll,
+//         behavior: 'smooth'
+//     });
+// }
 
 
 //MAININICIO
-function middleBoardInicioDiscordOnclick() {
+function mainInicioDiscordOnclick() {
     window.open("https://discord.gg/8nu3ZdDkp7", "_blank");
 }
-function middleBoardInicioClubesOnclick() {
+function mainInicioClubesOnclick() {
 
 }
 
 
 //MAINDISCORD
-function middleBoardDiscordDiscordOnclick() {
+function mainDiscordDiscordOnclick() {
     window.open("https://discord.gg/8nu3ZdDkp7", "_blank");
 }
-function middleBoardDiscordPostulacionesOnclick() {
+function mainDiscordPostulacionesOnclick() {
     window.location.href = "https://tumonulo.github.io/TSComunityBrawl/Postulaciones"
 }
 
 
 //MAINCLUBES
-function middleBoardClubesVerClubesOnclick() {
+function mainClubesVerClubesOnclick() {
     window.location.href = "https://tumonulo.github.io/TSComunityBrawl/Clubes";
 }
