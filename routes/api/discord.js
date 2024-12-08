@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const discordRouter = Router()
-const { statsDiscord } = require('../controllers/discord/statsDiscord.js')
+const { statsDiscord } = require('../../controllers/discord/stats.js')
 
 discordRouter.get('/stats', async (req, res) => {
     const stats = await statsDiscord()
@@ -10,4 +10,4 @@ discordRouter.get('/stats', async (req, res) => {
     res.json(stats)
 })
 
-module.exports = { discordRouter } 
+module.exports = discordRouter

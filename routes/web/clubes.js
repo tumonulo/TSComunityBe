@@ -5,4 +5,4 @@ clubsRouter.get('/', (req, res) => {
     res.sendFile(process.cwd() + '/public/html/clubs.html')
 })
 
-module.exports = { clubsRouter } 
+module.exports = clubsRouter 

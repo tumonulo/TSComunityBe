@@ -5,4 +5,4 @@ applicationsRouter.get('/', (req, res) => {
     res.sendFile(process.cwd() + '/public/html/applications.html')
 })
 
-module.exports = { applicationsRouter } 
+module.exports = applicationsRouter 
