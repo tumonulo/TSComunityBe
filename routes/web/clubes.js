@@ -1,8 +1,8 @@
 const { Router } = require('express')
-const clubsRouter = Router()
+const router = Router()
 
-clubsRouter.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.sendFile(process.cwd() + '/public/html/clubs.html')
 })
 
-module.exports = clubsRouter 
+module.exports = router 

@@ -1,8 +1,7 @@
 const { Router } = require('express')
-const overlayRouter = Router()
+const router = Router()
+const message = require('../../controllers/overlay/overlayMessage.js')
 
-overlayRouter.get('/', (req, res) => {
-    res.sendFile(process.cwd() + '/public/html/applications.html')
-})
+router.get('/', overlay)
 
-module.exports = overlayRouter
+module.exports = router

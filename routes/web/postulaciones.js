@@ -1,8 +1,8 @@
 const { Router } = require('express')
-const applicationsRouter = Router()
+const router = Router()
 
-applicationsRouter.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.sendFile(process.cwd() + '/public/html/applications.html')
 })
 
-module.exports = applicationsRouter 
+module.exports = router 
