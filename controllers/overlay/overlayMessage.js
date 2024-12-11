@@ -10,8 +10,8 @@ module.exports = async function overlay(req, res) {
 
     const memberCount = guild.memberCount
 
-    aysnc function getActiveMembers() {
-        guild.members.fetch({ withPresences: true }).then(members => {
+    async function getActiveMembers() {
+        await guild.members.fetch({ withPresences: true }).then(members => {
             const activeMembers = members.filter(member => 
                 member.presence?.status === 'online' || 
                 member.presence?.status === 'dnd' || 
