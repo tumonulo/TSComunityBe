@@ -1,6 +1,6 @@
 const { client } = require('../../ready.js')
 
-module.exports = async function overlay(req, res) {
+module.exports = async function randomMessage(req, res) {
     const messages = []
     const guild = client.guilds.cache.get('ID del guild')
     const channel = guild.channels.cache.get('ID del canal')
@@ -28,4 +28,4 @@ module.exports = async function overlay(req, res) {
     const randomIndex = Math.floor(Math.random() * messages.length);
     const response = array[randomIndex];
     res.json({ response });
-};
+}
