@@ -18,7 +18,7 @@ module.exports = async function discordStats(req, res) {
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
-        guild.channels.forEach(channel => {
+        guild.channels.forEach(async channel => {
             let lastMessage = await channel.messages.fetch({ limit: 1}).first()
             let lastMessageID = lastMessage.id
 
