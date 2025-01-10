@@ -18,15 +18,14 @@ process.on('uncaughtExceptionMonitor', (err, origin) => {
   console.log('Uncaught Expection Monitor', err, origin)
 });
 
-function loadRoutes(folderPath) {
-  fs.readdirSync(folderPath).forEach((file) => {
-    const filePath = path.join(folderPath, file)
-    const route = require(filePath)
-    const routeName = path.basename(file, '.js')
-    const routePath = routeName === 'index' ? '/' : `/${routeName}`
-    app.use(`${routePath}`, route)
-  })
-}
+const folderPath = __dirname + 'routes'
+fs.readdirSync(folderPath).forEach((file) => {
+  const filePath = path.join(folderPath, file)
+  const route = require(filePath)
+  const routeName = path.basename(file, '.js')
+  const routePath = routeName === 'index' ? '/' : `/${routeName}`
+  app.use(`${routePath}`, route)
+})
 
 app.use(express.static('public'))
 
