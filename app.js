@@ -2,8 +2,9 @@ const express = require('express')
 const app = express()
 const fs = require('node:fs')
 const path = require('node:path')
-const { ready } = require('./ready.js')
-
+require('dotenv').config()
+const PORT = process.env.PORT ?? 8080;
+const TOKENDISCORDBOT = process.env.TOKENDISCORDBOT;
 
 process.on('unhandledRejection', async (reason, promise) => {
   console.log('Unhandled Rejection error at:', promise, 'reason', reason)
@@ -23,21 +24,44 @@ function loadRoutes(folderPath) {
     const route = require(filePath)
     const routeName = path.basename(file, '.js')
     const routePath = routeName === 'index' ? '/' : `/${routeName}`
-    if (folderPath.endsWith('api')) {
-      app.use(`/api${routePath}`, route)
-    } else {
-      app.use(`${routePath}`, route)
-    }
+    app.use(`${routePath}`, route)
   })
 }
 
 app.use(express.static('public'))
 
-loadRoutes(path.join(__dirname, 'routes/web'))
-loadRoutes(path.join(__dirname, 'routes/api'))
+loadRoutes(path.join(__dirname, 'routes'))
 
 app.use((req, res) => {
   res.status(404).sendFile(process.cwd() + '/public/html/404.html')
 })
 
-ready(app)
+
+const startTime = Date.now();
+Promise.all([
+  app.listen(PORT),
+  client.login(TOKENDISCORDBOT)
+]).then(() => {
+    client.once("ready", () => {
+    const elapsedTime = Date.now() - startTime;
+    const elapsedTimeStr = `${elapsedTime} ms`
+    console.log(`
+      ╔════════════════════════════════════╗╔════════════════════════════════════╗
+      ║          SERVER LISTENING          ║║        DISCORD BOT CONNECTED       ║
+      ╚════════════════════════════════════╝╚════════════════════════════════════╝
+      Localhost: http://localhost:${PORT}       Discord Bot Name: ${client.user.username}
+      Time To Initialize: ${elapsedTimeStr.padEnd(18)} Discord Bot ID: ${client.user.id}
+      `);
+    })
+  }).catch(error => {
+    console.error(`
+      ╔═════════════════════════════════════╗
+      ║          CONNECTION ERROR           ║
+      ╚═════════════════════════════════════╝
+      Details: ${error.message}
+    `)
+})
+
+module.exports = {
+  client
+};

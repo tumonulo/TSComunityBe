@@ -1,4 +1,4 @@
-const { client } = require('../../ready.js')
+const { client } = require('../../app.js')
 
 module.exports = async function discordStats(req, res) {
     const guild = client.guild.cahce.get('ID DEL GUILD')

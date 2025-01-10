@@ -1,5 +1,5 @@
 require('discord.js');
-const { client } = require('../../ready.js');
+const { client } = require('../../app.js');
 require('dotenv').config();
 const BRAWLSTARSAPIKEY = process.env.BRAWLSTARSAPIKEY;
 const guild = client.guilds.cache.get('1093864130030612521');
