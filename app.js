@@ -6,6 +6,16 @@ require('dotenv').config()
 const PORT = process.env.PORT ?? 8080;
 const TOKENDISCORDBOT = process.env.TOKENDISCORDBOT;
 
+const { Client, GatewayIntentBits, Partials } = require('discord.js')
+
+const client = new Client({
+  intents: [Object.keys(GatewayIntentBits)],
+  partials: [Object.keys(Partials), Partials.Channel],
+  allowedMentions: {
+      parse: ["users"]
+    },
+})
+
 process.on('unhandledRejection', async (reason, promise) => {
   console.log('Unhandled Rejection error at:', promise, 'reason', reason)
 });
@@ -18,7 +28,7 @@ process.on('uncaughtExceptionMonitor', (err, origin) => {
   console.log('Uncaught Expection Monitor', err, origin)
 });
 
-const folderPath = __dirname + 'routes'
+const folderPath = __dirname + '/routes'
 fs.readdirSync(folderPath).forEach((file) => {
   const filePath = path.join(folderPath, file)
   const route = require(filePath)
@@ -28,8 +38,6 @@ fs.readdirSync(folderPath).forEach((file) => {
 })
 
 app.use(express.static('public'))
-
-loadRoutes(path.join(__dirname, 'routes'))
 
 app.use((req, res) => {
   res.status(404).sendFile(process.cwd() + '/public/html/404.html')
@@ -63,4 +71,4 @@ Promise.all([
 
 module.exports = {
   client
-};
+}
