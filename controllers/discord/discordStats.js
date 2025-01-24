@@ -1,7 +1,6 @@
 const { client } = require('../../app.js')
 
 module.exports = async function discordStats(req, res) {
-    client.once('ready', () => {
         const guild = client.guilds.cahce.get('1093864130030612521')
 
         async function getActiveMembers() {
@@ -44,5 +43,4 @@ module.exports = async function discordStats(req, res) {
             'activeMembers': getActiveMembers(),
             'dailyMessages' : getDailyMessages()
         })
-    })
 }

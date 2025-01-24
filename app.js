@@ -6,7 +6,7 @@ require('dotenv').config()
 const PORT = process.env.PORT ?? 8080;
 const TOKENDISCORDBOT = process.env.TOKENDISCORDBOT;
 
-const { Client, GatewayIntentBits, Partials } = require('discord.js')
+const { Client, GatewayIntentBits, Partials, EmbedBuilder } = require('discord.js')
 
 const client = new Client({
   intents: [Object.keys(GatewayIntentBits)],
