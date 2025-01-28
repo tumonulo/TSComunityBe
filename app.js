@@ -57,7 +57,7 @@ Promise.all([
       ║          SERVER LISTENING          ║║        DISCORD BOT CONNECTED       ║
       ╚════════════════════════════════════╝╚════════════════════════════════════╝
       Localhost: http://localhost:${PORT}       Discord Bot Name: ${client.user.username}
-      Time To Initialize: ${elapsedTimeStr.padEnd(18)} Discord Bot ID: ${client.user.id}
+      Time Until Initialize: ${elapsedTimeStr.padEnd(15)} Discord Bot ID: ${client.user.id}
       `);
     })
   }).catch(error => {
@@ -69,6 +69,4 @@ Promise.all([
     `)
 })
 
-module.exports = {
-  client
-}
+module.exports = client
