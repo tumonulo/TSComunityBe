@@ -89,5 +89,3 @@ Promise.all([
       Details: ${error.message}
     `.red)
 })
-
-module.exports = client
