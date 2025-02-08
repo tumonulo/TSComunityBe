@@ -3,6 +3,9 @@ const activeMembersOutput = document.getElementById('mainDiscord-1.1')
 const dailyMessagesOutput = document.getElementById('mainDiscord-1.2')
 
 window.addEventListener('DOMContentLoaded', async () => {
+    membersOutput.textContent = 'Cargando...'
+    activeMembersOutput.textContent = 'Cargando...'
+    dailyMessagesOutput.textContent = 'Cargando...'
     try {
         const response = await fetch('/discord/stats')
         const data = await response.json()
