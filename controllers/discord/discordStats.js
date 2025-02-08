@@ -1,7 +1,7 @@
-const { client } = require('../../app.js')
+const client = require('../../app.js')
 
 module.exports = async function discordStats(req, res) {
-        const guild = client.guilds.cahce.get('1093864130030612521')
+        const guild = client.guilds.cache.get('1093864130030612521')
 
         async function getActiveMembers() {
             await guild.members.fetch({ withPresences: true }).then(members => {

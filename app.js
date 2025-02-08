@@ -1,12 +1,27 @@
-const express = require('express')
-const app = express()
 const fs = require('node:fs')
 const path = require('node:path')
-require('dotenv').config()
-const PORT = process.env.PORT ?? 8080;
-const TOKENDISCORDBOT = process.env.TOKENDISCORDBOT;
 
-const { Client, GatewayIntentBits, Partials, EmbedBuilder } = require('discord.js')
+const { Client, GatewayIntentBits, Partials } = require('discord.js')
+const colors = require('colors')
+
+const express = require('express')
+const app = express()
+
+require('dotenv').config()
+const PORT = process.env.PORT ?? 8080
+const TOKEN_DISCORD_BOT = process.env.TOKEN_DISCORD_BOT
+
+process.on('unhandledRejection', async (reason, promise) => {
+  console.log('Unhandled Rejection error at:', promise, 'reason', reason)
+})
+
+process.on('uncaughtException', (err) => {
+   console.log('Uncaught Expection', err)
+})
+
+process.on('uncaughtExceptionMonitor', (err, origin) => {
+  console.log('Uncaught Expection Monitor', err, origin)
+})
 
 const client = new Client({
   intents: [Object.keys(GatewayIntentBits)],
@@ -16,17 +31,25 @@ const client = new Client({
     },
 })
 
-process.on('unhandledRejection', async (reason, promise) => {
-  console.log('Unhandled Rejection error at:', promise, 'reason', reason)
-});
+app.use(express.static(path.join(__dirname, 'public')))
+app.disable('x-powered-by')
+app.use(cors({
+  origin: (origin, callback) => {
+    const acceptedOrigins = [
+      'https://games-navy-seven.vercel.app'
+    ]
 
-process.on('uncaughtException', (err) => {
-   console.log('Uncaught Expection', err)
-});
+    if (acceptedOrigins.includes(origin)) {
+      return callback(null, true)
+    }
 
-process.on('uncaughtExceptionMonitor', (err, origin) => {
-  console.log('Uncaught Expection Monitor', err, origin)
-});
+    if (!origin) {
+      return callback(null, true)
+    }
+
+    return callback(new Error('Not allowed by CORS'))
+  }
+}))
 
 const folderPath = __dirname + '/routes'
 fs.readdirSync(folderPath).forEach((file) => {
@@ -37,17 +60,14 @@ fs.readdirSync(folderPath).forEach((file) => {
   app.use(`${routePath}`, route)
 })
 
-app.use(express.static('public'))
-
 app.use((req, res) => {
   res.status(404).sendFile(process.cwd() + '/public/html/404.html')
 })
 
-
 const startTime = Date.now();
 Promise.all([
   app.listen(PORT),
-  client.login(TOKENDISCORDBOT)
+  client.login(TOKEN_DISCORD_BOT)
 ]).then(() => {
     client.once("ready", () => {
     const elapsedTime = Date.now() - startTime;
@@ -58,7 +78,7 @@ Promise.all([
       ╚════════════════════════════════════╝╚════════════════════════════════════╝
       Localhost: http://localhost:${PORT}       Discord Bot Name: ${client.user.username}
       Time Until Initialize: ${elapsedTimeStr.padEnd(15)} Discord Bot ID: ${client.user.id}
-      `);
+      `.green);
     })
   }).catch(error => {
     console.error(`
@@ -66,7 +86,7 @@ Promise.all([
       ║          CONNECTION ERROR           ║
       ╚═════════════════════════════════════╝
       Details: ${error.message}
-    `)
+    `.red)
 })
 
 module.exports = client
