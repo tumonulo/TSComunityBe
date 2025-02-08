@@ -15,5 +15,5 @@ function scrollToSection(section) {
     window.scrollTo({
         top: mainPositionToScroll,
         behavior: 'smooth'
-    });
+    })
 }

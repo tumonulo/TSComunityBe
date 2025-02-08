@@ -1,46 +1,66 @@
-const client = require('../../app.js')
-
 module.exports = async function discordStats(req, res) {
-        const guild = client.guilds.cache.get('1093864130030612521')
+    const client = require('../../app.js')
 
-        async function getActiveMembers() {
-            await guild.members.fetch({ withPresences: true }).then(members => {
-                const activeMembers = members.filter(member => 
-                    member.presence?.status === 'online' || 
-                    member.presence?.status === 'dnd' || 
-                    member.presence?.status === 'idle').size
-                    return activeMembers
-            })
+    const guild = client.guilds.cache.get('1093864130030612521')
+    const channels = guild.channels.cache.filter(channel => channel.type === 'GUILD_TEXT')
+
+
+    async function getActiveMembers() {
+        try {
+          const members = await guild.members.fetch({ withPresences: true })
+          const activeMembers = members.filter(member =>
+            member.presence?.status === 'online' ||
+            member.presence?.status === 'dnd' ||
+            member.presence?.status === 'idle'
+          ).size
+          return activeMembers
+        } catch (error) {
+          console.error(error)
+          return undefined 
         }
+      }
     
-        async function getDailyMessages() {
-            let dailyMessages = 0
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
+      async function getDailyMessages() {
+        let dailyMessages = 0; // Contador de mensajes diarios
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // Establece la hora de inicio del día
     
-            guild.channels.forEach(async channel => {
-                let lastMessage = await channel.messages.fetch({ limit: 1}).first()
-                let lastMessageID = lastMessage.id
+        for (const [channelId, channel] of channels) {
+            let lastMessageId = null; // ID del último mensaje obtenido
+            let hasMoreMessages = true; // Bandera para controlar la paginación
     
-                while (lastMessage.createdTimestamp > today.getTime()) {
-                    const messages = await channel.messages.fetch({ limit: 100, before: lastMessageID }).array()
-                    lastMessageID = messages[99]
-                    dailyMessages += messages.size
-    
-                    messages.forEach(message => {
-                        if (message.createdTimestamp < today.getTime()) {
-                            dailyMessages--;
-                        }
-                    });
+            while (hasMoreMessages) {
+                const options = { limit: 100 }; // Opciones para fetch
+                if (lastMessageId) {
+                    options.before = lastMessageId; // Paginación: obtener mensajes antes del último mensaje
                 }
-            })
-            return dailyMessages
+    
+                const messages = await channel.messages.fetch(options); // Obtener mensajes
+                if (messages.size === 0) {
+                    hasMoreMessages = false; // No hay más mensajes, salir del bucle
+                    break;
+                }
+    
+                // Contar mensajes enviados hoy
+                messages.forEach(message => {
+                    if (message.createdTimestamp >= today.getTime()) {
+                        dailyMessages++;
+                    } else {
+                        hasMoreMessages = false; // Mensajes más antiguos que hoy, salir del bucle
+                    }
+                });
+    
+                lastMessageId = messages.last().id; // Actualizar el ID del último mensaje
+            }
         }
     
+        return dailyMessages; // Devolver el total de mensajes diarios
+    }
     
-        res.json({
-            'members': guild.memberCount,
-            'activeMembers': getActiveMembers(),
-            'dailyMessages' : getDailyMessages()
-        })
+    
+    res.json({
+        'members': guild.memberCount,
+        'activeMembers': await getActiveMembers(),
+        'dailyMessages' : await getDailyMessages()
+    })
 }

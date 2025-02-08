@@ -65,12 +65,13 @@ app.use((req, res) => {
   res.status(404).sendFile(process.cwd() + '/public/html/404.html')
 })
 
+module.exports = client
+
 const startTime = Date.now();
 Promise.all([
   app.listen(PORT),
   client.login(TOKEN_DISCORD_BOT)
 ]).then(() => {
-    client.once("ready", () => {
     const elapsedTime = Date.now() - startTime;
     const elapsedTimeStr = `${elapsedTime} ms`
     console.log(`
@@ -79,8 +80,7 @@ Promise.all([
       ╚════════════════════════════════════╝╚════════════════════════════════════╝
       Localhost: http://localhost:${PORT}       Discord Bot Name: ${client.user.username}
       Time Until Initialize: ${elapsedTimeStr.padEnd(15)} Discord Bot ID: ${client.user.id}
-      `.green);
-    })
+      `.green)
   }).catch(error => {
     console.error(`
       ╔═════════════════════════════════════╗
