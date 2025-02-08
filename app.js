@@ -2,13 +2,14 @@ const fs = require('node:fs')
 const path = require('node:path')
 
 const { Client, GatewayIntentBits, Partials } = require('discord.js')
-const colors = require('colors')
+const cors = require('cors')
+require('colors')
 
 const express = require('express')
 const app = express()
 
 require('dotenv').config()
-const PORT = process.env.PORT ?? 8080
+const PORT = process.env.PORT || 8080
 const TOKEN_DISCORD_BOT = process.env.TOKEN_DISCORD_BOT
 
 process.on('unhandledRejection', async (reason, promise) => {
@@ -36,7 +37,7 @@ app.disable('x-powered-by')
 app.use(cors({
   origin: (origin, callback) => {
     const acceptedOrigins = [
-      'https://games-navy-seven.vercel.app'
+      'https://ts-comunity-brawl.vercel.app/'
     ]
 
     if (acceptedOrigins.includes(origin)) {
